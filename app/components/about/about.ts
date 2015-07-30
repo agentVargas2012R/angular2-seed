@@ -1,6 +1,11 @@
+//https://github.com/mgechev/angular2-seed
+//# dev
+//gulp serve.dev
+//# prod
+//gulp serve.prod
 import {Component, View, NgFor} from 'angular2/angular2';
 
-import {NamesList} from '../../services/NameList';
+import {NamesList} from '../../services/NamesList';
 
 @Component({
   selector: 'component-2'

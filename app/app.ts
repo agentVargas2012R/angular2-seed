@@ -3,15 +3,18 @@ import {RouteConfig, RouterOutlet, RouterLink, routerInjectables} from 'angular2
 
 import {Home} from './components/home/home';
 import {About} from './components/about/about';
-import {NamesList} from './services/NameList';
+import {TodoApp} from './components/todoApp/todoApp';
+import {TodoList} from './services/TodoList';
+import {NamesList} from './services/NamesList';
 
 @Component({
   selector: 'app',
-  viewInjector: [NamesList]
+  viewInjector: [TodoList, NamesList]
 })
 @RouteConfig([
-  { path: '/', component: Home, as: 'home' },
-  { path: '/about', component: About, as: 'about' }
+  { path: '/', component: TodoApp, as: 'todoApp' },
+  { path: '/Home', component: Home, as: 'home' },
+  { path: '/About', component: About, as: 'about' }
 ])
 @View({
   templateUrl: './app.html?v=<%= VERSION %>',

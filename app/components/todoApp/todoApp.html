@@ -1,0 +1,39 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="col-md-4">
+			<h1>UX/DEV TodoApp</h1>
+			<input id="toggle-all" type="checkbox" (click)="toggleAll($event)">
+    		<label style="font-size:14px;" for="toggle-all">Mark all as complete</label>
+			<ul>
+			  <li style="font-size:24px;" *ng-for="#todo of todoList.get()">
+			  	<input class="todo" (dblclick)="editTodo(todo)" value="{{todo.title}}"/>
+			  	<input class="toggle" type="checkbox" 
+			  	(click)="completeMe($event, todo)"
+                 [checked]="todo.completed" />			  	
+			  </li>
+			</ul>
+		</div>	
+	</div>
+	<div class="row-fluid">
+		<div class="col-md-12">
+			<!-- <form class="navbar-form navbar-left"  ng-submit="test()" role="search"> -->
+		  <div class="form-group">
+		  	<div class="container-fluid"> 	
+		  		<div class="col-md-6">
+			  	  <input class="form form-control" 
+			  	          id="new-todo"
+					      placeholder="What needs to be done?"
+					      autofocus
+					      #newtodo
+					      (keyup.enter)="enterTodo(newtodo)">
+			    </div>
+			    <div class="col-md-6">
+			      <button class="btn btn-primary" (click)="addTodo(inputValue)" 
+			      	class="btn btn-primary">Add</button>
+			    </div>  
+		    </div>  
+		  </div>
+		  <!-- </form> -->
+		</div>
+	</div>
+</div>
