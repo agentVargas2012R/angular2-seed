@@ -18,6 +18,7 @@ export class TodoApp {
   constructor(public todoList: TodoList) {}
 
   enterTodo(inputElement): void {
+    //debugger;  
     this.addTodo(inputElement.value);
     inputElement.value = '';
   }
